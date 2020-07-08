@@ -23,3 +23,28 @@
 * rockPaperScissors(5); // => [['rock', 'rock', 'rock', 'rock', 'rock'], etc...]
 *
 */
+function rockPaperScissors (){
+    var outcomes = [];
+    var options = ["rock","paper","scissors"];
+    for (var i=0; i<options.length; i++){
+        for (var j = 0; j<options.length; j++){
+            for (var m =0; m<options.length; m++){
+                outcomes.push ([options[i], options [j], options [m]]);
+            }
+        }
+    } 
+    return outcomes;
+}
+
+/*function rockPaperScissors (){
+    var outcomes = [];
+    //declared variable options to be an array of options rock, paper, scissors
+    var options = ["rock","paper","scissors"];
+    //for loop that will increment one by one for each outcome
+    for (var i=0; i<options.length; i++){
+        outcomes.push(options [i]);
+    }
+    //option plus and equal to the outcome
+return outcomes;
+{
+*/
