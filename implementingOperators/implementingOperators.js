@@ -11,15 +11,15 @@
 
 
 var multiply = function(x, y) {
-  // TODO: should return the product of x * y
+  return x * y// TODO: should return the product of x * y
 };
 
 var divide = function(x, y) {
-  // TODO: should return the dividend of x / y
+  return x / y // TODO: should return the dividend of x / y
 };
 
 var modulo = function(x, y) {
-  // TODO: should return the remainder of x / y
+  return x % y // TODO: should return the remainder of x / y
 };
 
 
