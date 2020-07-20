@@ -26,3 +26,21 @@
  *
  *
  */
+
+
+function characterFrequency (str){
+    var myArr= [];
+    var character = {};
+    for (var i = 0; i < str.length; i++){
+        if (character[str[i]] === undefined){
+            character[str[i]] = 1;
+        }else{
+            character[str[i]]++;
+        } 
+    }
+    for (var property in character){
+        myArr.push(`[${property}: ${character[property]}]`);
+    }
+
+    return myArr;
+}

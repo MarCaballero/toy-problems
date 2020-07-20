@@ -23,3 +23,19 @@
  *
  *
  */
+function balancedParens (string){ //Function that takes a string
+var isClosed = false;
+var myArr= [];
+for (var i = 0; i<string.length; i++){
+    if (string[i]==="(" || string[i]==="{" || string[i]==="["){
+        myArr.push (string[i]);
+    }
+    if (string[i]===")" || string[i]==="}" || string[i]==="]"){
+        myArr.pop (string[i]);
+    }
+}
+if (myArr.length === 0){
+    isClosed = true
+} 
+return isClosed
+}
