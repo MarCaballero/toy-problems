@@ -23,21 +23,26 @@
 * rockPaperScissors(5); // => [['rock', 'rock', 'rock', 'rock', 'rock'], etc...]
 *
 */
+function rockPaperScissors (rounds){
+    var outcomes = [];
+    var options = ["rock", "paper", "scissors"];
 
-var rockPaperScissors = function (n) {
-  var result = [];
-  var choices = ['rock', 'paper', 'scissors'];
-  var previous;
+    function myFunction(game, roundsLeft){
+        if (roundsLeft === 0){
+            outcomes.push([...game]);
+            return;
+        }
 
-  if (n <= 0) return result;
-  if (n === 1) return [ ['rock'], ['paper'], ['scissors'] ];
+        for (var i = 0; i < options.length; i++){
+            game.push(options[i]);
+            myFunction([...game], roundsLeft - 1);
+            game.pop();
+        }
+    }
 
-  previous = rockPaperScissors( n - 1 );
-  previous.forEach(function (array) {
-    choices.forEach(function (choice) {
-      result.push( Array.prototype.concat( array, choice ) );
-    });
-  });
+    myFunction([], rounds);
 
-  return result;
-};
+    return outcomes;
+} 
+
+rockPaperScissors();

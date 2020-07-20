@@ -23,37 +23,19 @@
  *
  *
  */
-
-var balancedParens = function (input) {
-  var stack = [];
-  var map = {
-    ')' : '(',
-    ']' : '[',
-    '}' : '{'
-  };
-  var length = input.length;
-  var i, currentChar, popped;
-
-  for (i = 0; i < length; i += 1) {
-    currentChar = input[i];
-
-    if ( isOpening(currentChar) ) {
-      stack.push( currentChar );
-    } else if ( isClosing(currentChar) ) {
-      popped = stack.pop();
-      if ( map[currentChar] !== popped ) {
-        return false;
-      }
+function balancedParens (string){ //Function that takes a string
+var isClosed = false;
+var myArr= [];
+for (var i = 0; i<string.length; i++){
+    if (string[i]==="(" || string[i]==="{" || string[i]==="["){
+        myArr.push (string[i]);
     }
-  }
-
-  return stack.length === 0;
-};
-
-var isOpening = function (char) {
-  return char === '(' || char === '[' || char === '{';
-};
-
-var isClosing = function (char) {
-  return char === ')' || char === ']' || char === '}';
-};
+    if (string[i]===")" || string[i]==="}" || string[i]==="]"){
+        myArr.pop (string[i]);
+    }
+}
+if (myArr.length === 0){
+    isClosed = true
+} 
+return isClosed
+}
